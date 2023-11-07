@@ -1,17 +1,21 @@
 
 import './App.css';
 import Navbar from './Components/Navbar';
-import Cards from './Components/Cards';
-
+import Card from './Pages/Cards.js';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Home from './Pages/Home.js'
+import Contact from './Pages/Contact.js'
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <Navbar></Navbar>
-     <h1>CS 230L</h1>
-     <h2>Section - 02</h2>
-     <p>WVU ID: 800397051</p>
-     <p>Hi, I am Evan Anderson.</p>
-     <Cards></Cards>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/card" element={<Card />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
+      </BrowserRouter>
     
     </div>
   );
